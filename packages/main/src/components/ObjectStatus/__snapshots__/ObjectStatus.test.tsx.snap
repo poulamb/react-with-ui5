@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ObjectStatus ObjectStatus: state: Error 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectStatus-objectStatus"
+  >
+    <div
+      class="ObjectStatus-icon ObjectStatus-iconError"
+    >
+      <ui5-icon
+        name="status-negative"
+        style="font-size: 1rem;"
+        ui5-icon=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectStatus ObjectStatus: state: Information 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectStatus-objectStatus"
+  >
+    <div
+      class="ObjectStatus-icon ObjectStatus-iconInformation"
+    >
+      <ui5-icon
+        name="hint"
+        style="font-size: 1rem;"
+        ui5-icon=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectStatus ObjectStatus: state: None 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectStatus-objectStatus"
+  >
+    <div
+      class="ObjectStatus-icon ObjectStatus-iconNone"
+    >
+      <ui5-icon
+        name="status-inactive"
+        style="font-size: 1rem;"
+        ui5-icon=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectStatus ObjectStatus: state: Success 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectStatus-objectStatus"
+  >
+    <div
+      class="ObjectStatus-icon ObjectStatus-iconSuccess"
+    >
+      <ui5-icon
+        name="status-positive"
+        style="font-size: 1rem;"
+        ui5-icon=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectStatus ObjectStatus: state: Warning 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectStatus-objectStatus"
+  >
+    <div
+      class="ObjectStatus-icon ObjectStatus-iconWarning"
+    >
+      <ui5-icon
+        name="status-critical"
+        style="font-size: 1rem;"
+        ui5-icon=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectStatus Render without Crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectStatus-objectStatus"
+  >
+    <div
+      class="ObjectStatus-icon ObjectStatus-iconError"
+    >
+      <ui5-icon
+        name="status-negative"
+        style="font-size: 1rem;"
+        ui5-icon=""
+      />
+    </div>
+    <span
+      class="ObjectStatus-textError"
+    >
+      Hello
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ObjectStatus Text Deprecation 1`] = `
+<DocumentFragment>
+  <div
+    class="ObjectStatus-objectStatus"
+  >
+    <div
+      class="ObjectStatus-icon ObjectStatus-iconError"
+    >
+      <ui5-icon
+        name="status-negative"
+        style="font-size: 1rem;"
+        ui5-icon=""
+      />
+    </div>
+    <span
+      class="ObjectStatus-textError"
+    >
+      Hello
+    </span>
+  </div>
+</DocumentFragment>
+`;

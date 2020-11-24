@@ -1,0 +1,24 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.12.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "yes": true,
+      "preid": "rc",
+      "message": "chore(release): publish %s [ci skip]"
+    },
+    "publish": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "yes": true,
+      "preid": "rc",
+      "message": "chore(release): publish %s [ci skip]"
+    }
+  }
+}

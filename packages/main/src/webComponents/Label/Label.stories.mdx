@@ -1,0 +1,41 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Label } from '@ui5/webcomponents-react/lib/Label';
+import { createSelectArgTypes } from '@shared/stories/createSelectArgTypes';
+import { DocsHeader } from '@shared/stories/DocsHeader';
+import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
+
+<Meta
+  title="Data Display / Label"
+  component={Label}
+  argTypes={{
+    ...createSelectArgTypes({}),
+    children: { control: 'text' },
+    ...DocsCommonProps
+  }}
+  args={{
+    children: 'Label Text',
+    style: {},
+    className: '',
+    tooltip: '',
+    slot: '',
+    ref: null
+  }}
+/>
+
+<DocsHeader />
+
+<br />
+
+## Example
+
+<Canvas>
+  <Story name="Default">
+    {(args) => {
+      return <Label {...args} />;
+    }}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="." />

@@ -1,0 +1,48 @@
+{
+  "name": "@ui5/webcomponents-react-base",
+  "version": "0.12.0",
+  "description": "Base for ui5-webcomponents-react",
+  "main": "index.cjs.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
+  "homepage": "https://sap.github.io/ui5-webcomponents-react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SAP/ui5-webcomponents-react.git",
+    "directory": "packages/base"
+  },
+  "author": "SAP SE (https://www.sap.com)",
+  "license": "Apache-2.0",
+  "sideEffects": [
+    "./polyfill/*",
+    "core-js/**/*",
+    "intersection-observer"
+  ],
+  "scripts": {
+    "clean": "rimraf cjs Device hooks lib polyfill styling utils index.esm.js index.d.ts",
+    "build:rollup": "rollup -c rollup.config.mjs",
+    "build:polyfills": "tsc ./src/polyfill/*.ts --outDir ./polyfill --skipLibCheck",
+    "build": "npm-run-all -s build:rollup build:polyfills",
+    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir . --removeComments false"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.12.5",
+    "core-js": "3.7.0",
+    "intersection-observer": "0.11.0",
+    "resize-observer-polyfill": "1.5.1",
+    "smoothscroll-polyfill": "0.4.4"
+  },
+  "peerDependencies": {
+    "@ui5/webcomponents-base": "0.26.0",
+    "react": "^16.8.0 || ^17.0.0",
+    "react-jss": "^10.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@ui5/webcomponents-base": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,96 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Toast } from '@ui5/webcomponents-react/lib/Toast';
+import { Button } from '@ui5/webcomponents-react/lib/Button';
+import { ToastPlacement } from '@ui5/webcomponents-react/lib/ToastPlacement';
+import { createSelectArgTypes } from '@shared/stories/createSelectArgTypes';
+import { DocsHeader } from '@shared/stories/DocsHeader';
+import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
+import { useRef } from 'react';
+
+<Meta
+  title="Modals & Popovers / Toast"
+  component={Toast}
+  argTypes={{
+    ...createSelectArgTypes({ placement: ToastPlacement }),
+    ...DocsCommonProps,
+    children: { control: 'text' }
+  }}
+  args={{
+    placement: ToastPlacement.BottomCenter,
+    children: 'Toast Text',
+    style: {},
+    className: '',
+    tooltip: '',
+    slot: '',
+    ref: null
+  }}
+/>
+
+<DocsHeader />
+<br />
+
+## Show a toast
+
+The `Toast` component has an imperative API for getting displayed. It will not be displayed just because it is part of the DOM.
+In order to show the Toast, you have to get a reference to the `Toast` DOM element and call the `show`-method.
+You can either access the DOM element by using a React `ref` or work with IDs.
+
+**Example**
+
+```jsx
+export const MyComponentWithAToast() {
+  const toast = useRef();
+
+  const showToast = () => {
+    toast.current.show();
+  };
+  return (
+    <ThemeProvider>
+      <Button onClick={showToast}>Show Toast</Button>
+      <Toast ref={toast}>This is my Toast!</Toast>
+    </ThemeProvider>
+  );
+}
+```
+
+<br />
+
+## Example
+
+<Canvas>
+  <Story name="Default">
+    {(args) => {
+      const toast = useRef();
+      const showToast = () => {
+        toast.current.show();
+      };
+      return (
+        <>
+          <Toast ref={toast} duration={args.duration} placement={args.placement}>
+            {args.children}
+          </Toast>
+          <Button onClick={showToast}>Show Toast</Button>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="." />
+
+## Usage
+
+### When to use:
+
+- You want to display a short success or information message.
+- You do not want to interrupt users while they are performing an action.
+- You want to confirm a successful action.
+
+### When not to use:
+
+- You want to display error or warning message.
+- You want to interrupt users while they are performing an action.
+- You want to make sure that users read the message before they leave the page.
+- You want users to be able to copy some part of the message text.

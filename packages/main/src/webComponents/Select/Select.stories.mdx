@@ -1,0 +1,88 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Select } from '@ui5/webcomponents-react/lib/Select';
+import { ValueState } from '@ui5/webcomponents-react/lib/ValueState';
+import { Option } from '@ui5/webcomponents-react/lib/Option';
+import { createSelectArgTypes } from '@shared/stories/createSelectArgTypes';
+import { DocsHeader } from '@shared/stories/DocsHeader';
+import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
+
+<Meta
+  title="Inputs / Select"
+  component={Select}
+  subcomponents={{ Option }}
+  argTypes={{
+    ...createSelectArgTypes({ valueState: ValueState }),
+    ...DocsCommonProps,
+    children: { control: { disable: true } },
+    valueStateMessage: { control: { disable: true } }
+  }}
+  args={{
+    valueState: ValueState.None,
+    style: {},
+    className: '',
+    tooltip: '',
+    slot: '',
+    ref: null
+  }}
+/>
+
+<DocsHeader />
+
+<br />
+
+## Example
+
+<Canvas>
+  <Story name="Default">
+    {(args) => {
+      return (
+        <Select {...args}>
+          <Option>Option 1</Option>
+          <Option>Option 2</Option>
+          <Option>Option 3</Option>
+          <Option>Option 4</Option>
+          <Option>Option 5</Option>
+        </Select>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="." />
+
+## Keyboard Handling
+
+The `Select` provides advanced keyboard handling. If the `Select` is focused, you can open or close the drop-down by pressing `F4`, `ALT+UP` or `ALT+DOWN` keys. Once the drop-down is opened, you can use the `UP` and `DOWN` arrow keys to navigate through the available options and select one by pressing the `Space` or `Enter` keys.
+
+<br />
+
+## Recipes
+
+### Get the ID of the selected item with `onChange`
+
+With the help of the HTML5 `data-` API you can define any primitive value (like numbers, strings)
+as an attribute on an element.
+This data will be available on the `onChange` event as part of the `dataset` object of the `selectedOption`:
+
+```jsx
+const data = [
+  { id: 1, text: 'Option 1' },
+  { id: 2, text: 'Option 2' }
+];
+
+const onChange = (event) => {
+  // event.detail.selectedOption is a reference to the selected HTML Element
+  // dataset contains all attributes that were passed with the data- prefix.
+  console.log(event.detail.selectedOption.dataset.id);
+};
+
+<Select onChange={onChange}>
+  {data.map((item) => (
+    <Option key={item.id} data-id={item.id}>
+      {item.text}
+    </Option>
+  ))}
+</Select>;
+```

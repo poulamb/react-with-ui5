@@ -1,0 +1,41 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Icon } from '@ui5/webcomponents-react/lib/Icon';
+import '@ui5/webcomponents-icons/dist/employee.js';
+import { createSelectArgTypes } from '@shared/stories/createSelectArgTypes';
+import { DocsHeader } from '@shared/stories/DocsHeader';
+import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
+
+<Meta
+  title="Data Display / Icon"
+  component={Icon}
+  argTypes={{
+    ...createSelectArgTypes({}),
+    ...DocsCommonProps
+  }}
+  args={{
+    name: 'employee',
+    style: {},
+    className: '',
+    tooltip: '',
+    slot: '',
+    ref: null
+  }}
+/>
+
+<DocsHeader />
+
+<br />
+
+## Example
+
+<Canvas>
+  <Story name="Default">
+    {(args) => {
+      return <Icon {...args} />;
+    }}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="." />

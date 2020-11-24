@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+node_modules
+*.iml
+yarn-error.log
+.idea
+coverage
+/.env
+@types
+.cache
+.out
+lerna-debug.log
+packages/main/scripts/wrapperGeneration/json
+.awcache
+examples/seed-test

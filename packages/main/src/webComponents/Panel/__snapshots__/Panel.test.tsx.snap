@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel Basic Test (generated) 1`] = `
+<DocumentFragment>
+  <ui5-panel
+    accessible-role="Form"
+    header-level="H2"
+    ui5-panel=""
+  />
+</DocumentFragment>
+`;

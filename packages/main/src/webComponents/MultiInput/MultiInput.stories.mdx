@@ -1,0 +1,74 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { MultiInput } from '@ui5/webcomponents-react/lib/MultiInput';
+import { InputType } from '@ui5/webcomponents-react/lib/InputType';
+import { ValueState } from '@ui5/webcomponents-react/lib/ValueState';
+import '@ui5/webcomponents-icons/dist/employee.js';
+import { Token } from '@ui5/webcomponents-react/lib/Token';
+import { createSelectArgTypes } from '@shared/stories/createSelectArgTypes';
+import { DocsHeader } from '@shared/stories/DocsHeader';
+import { DocsCommonProps } from '@shared/stories/DocsCommonProps';
+
+<Meta
+  title="Inputs / MultiInput"
+  component={MultiInput}
+  subcomponents={{ Token }}
+  argTypes={{
+    ...createSelectArgTypes({ type: InputType, valueState: ValueState }),
+    ...DocsCommonProps,
+    tokens: { control: { disable: true } },
+    children: { control: { disable: true } },
+    icon: { control: { disable: true } },
+    valueStateMessage: { control: { disable: true } }
+  }}
+  args={{
+    type: InputType.Text,
+    valueState: ValueState.None,
+    style: { width: '400px' },
+    className: '',
+    tooltip: '',
+    slot: '',
+    ref: null
+  }}
+/>
+
+<DocsHeader />
+
+<br />
+
+## Example
+
+<Canvas>
+  <Story name="Default">
+    {(args) => {
+      return (
+        <MultiInput
+          {...args}
+          tokens={
+            <>
+              <Token text="Argentina" />
+              <Token text="Bulgaria" />
+              <Token text="England" />
+              <Token text="Finland" />
+              <Token text="Germany" />
+              <Token text="Hungary" />
+              <Token text="Italy" />
+              <Token text="Luxembourg" />
+              <Token text="Mexico" />
+              <Token text="Philippines" />
+              <Token text="Sweden" />
+              <Token text="USA" />
+            </>
+          }
+        />
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="." />
+
+## Render SuggestionItems
+
+The `MultiInput` component supports rendering `SuggestionItems`. An example on how to use them can be found [here](?path=/docs/ui5-web-components-input--with-suggestion-item#input-with-customizable-suggestionitem).
