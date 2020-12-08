@@ -15874,9 +15874,9 @@ react-syntax-highlighter@^13.5.0:
     refractor "^3.1.0"
 
 react-syntax-highlighter@^15.2.1:
-  version "15.3.0"
-  resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-15.3.0.tgz#d8bf103123550e0d637fe8cb1feaf68e22bf9944"
-  integrity sha512-ghJkkmNw/3wRf9XEvfGeG7tfTuAMyThdNxJy50s9CmnwS3QusKDC+F5lX6lvX3mm+V0CwN+zpRioQb0kgdT11w==
+  version "15.4.1"
+  resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-15.4.1.tgz#33c9eb13992eaaf571670c9255df68b79b4257c1"
+  integrity sha512-9FxwY+DUbUtSfnnHpYFTgpWoySARiTXWUCtlSvJR0Y6KZ5TiQWhG6MlSIVyPOtHhwOZm9h0EH7wOsYmxhWo5sA==
   dependencies:
     "@babel/runtime" "^7.3.1"
     highlight.js "^10.1.1"
